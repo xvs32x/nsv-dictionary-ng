@@ -45,7 +45,10 @@ export class WordListComponent implements OnInit, OnDestroy {
 
   constructor(private store: Store<{ app: AppStateInterface }>) {
     // Renew form after submit
-    const s1 = this.words.subscribe(() => this.form.setValue({}));
+    const s1 = this.words.subscribe(() => this.form.setValue({
+      term: '',
+      translate: ''
+    }));
     this.subs.push(s1);
   }
 
